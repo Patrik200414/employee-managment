@@ -31,7 +31,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     @Override
     public List<Employee> getEmployees() {
-        String sql = "SELECT * FROM employee_management ORDER BY hired DESC;";
+        String sql = "SELECT * FROM employees ORDER BY hired DESC;";
         List<Employee> employees = new ArrayList<>();
         try{
             Optional<Connection> optionalConnection = databaseConnection.connect();
