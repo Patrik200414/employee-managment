@@ -1,7 +1,10 @@
 package com.employee.management.employeemanagementsystem.logger;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDateTime;
 
+@Component
 public class ConsoleLogger implements Logger{
     @Override
     public void logInfo(String message) {

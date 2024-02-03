@@ -1,7 +1,9 @@
 package com.employee.management.employeemanagementsystem.dao;
 
+import com.employee.management.employeemanagementsystem.configuration.LoggerConfiguration;
 import com.employee.management.employeemanagementsystem.connection.DatabaseConnection;
 import com.employee.management.employeemanagementsystem.connection.DatabaseConnectionImpl;
+import com.employee.management.employeemanagementsystem.logger.ConsoleLogger;
 import com.employee.management.employeemanagementsystem.logger.Logger;
 import com.employee.management.employeemanagementsystem.model.Employee;
 import com.employee.management.employeemanagementsystem.model.Level;
@@ -19,11 +21,10 @@ import java.util.Optional;
 public class EmployeeDAOImpl implements EmployeeDAO{
     private final DatabaseConnection databaseConnection;
     private final Logger logger;
-
-    @Autowired
+    //@Autowired
     public EmployeeDAOImpl(Logger logger) {
         this.databaseConnection = new DatabaseConnectionImpl();
-        this.logger = logger;
+        this.logger = new ConsoleLogger();
     }
 
     @Override
