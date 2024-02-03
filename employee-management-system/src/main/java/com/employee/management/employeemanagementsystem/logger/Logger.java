@@ -1,6 +1,6 @@
 package com.employee.management.employeemanagementsystem.logger;
 
 public interface Logger {
-    String logInfo(String message);
-    String logError(String message);
+    void logInfo(String message);
+    void logError(String message);
 }
