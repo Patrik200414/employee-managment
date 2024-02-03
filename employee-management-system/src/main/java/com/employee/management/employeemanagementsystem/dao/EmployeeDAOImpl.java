@@ -8,6 +8,7 @@ import com.employee.management.employeemanagementsystem.logger.Logger;
 import com.employee.management.employeemanagementsystem.model.Employee;
 import com.employee.management.employeemanagementsystem.model.Level;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class EmployeeDAOImpl implements EmployeeDAO{
     private final DatabaseConnection databaseConnection;
     private final Logger logger;
