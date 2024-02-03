@@ -5,10 +5,10 @@ import java.time.LocalDate;
 public class Employee {
     private final int id;
     private final String name;
-    private final String level;
+    private final Level level;
     private final LocalDate hired;
 
-    public Employee(int id, String name, String level, LocalDate hired) {
+    public Employee(int id, String name, Level level, LocalDate hired) {
         this.id = id;
         this.name = name;
         this.level = level;
@@ -23,7 +23,7 @@ public class Employee {
         return name;
     }
 
-    public String getLevel() {
+    public Level getLevel() {
         return level;
     }
 
