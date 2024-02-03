@@ -1,6 +1,6 @@
 package com.employee.management.employeemanagementsystem.service;
 
-import com.employee.management.employeemanagementsystem.dao.EmployeeDAO;
+import com.employee.management.employeemanagementsystem.model.dao.EmployeeDAO;
 import com.employee.management.employeemanagementsystem.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

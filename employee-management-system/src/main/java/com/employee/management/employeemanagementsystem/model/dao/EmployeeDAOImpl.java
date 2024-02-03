@@ -1,13 +1,11 @@
-package com.employee.management.employeemanagementsystem.dao;
+package com.employee.management.employeemanagementsystem.model.dao;
 
-import com.employee.management.employeemanagementsystem.configuration.LoggerConfiguration;
 import com.employee.management.employeemanagementsystem.connection.DatabaseConnection;
 import com.employee.management.employeemanagementsystem.connection.DatabaseConnectionImpl;
 import com.employee.management.employeemanagementsystem.logger.ConsoleLogger;
 import com.employee.management.employeemanagementsystem.logger.Logger;
 import com.employee.management.employeemanagementsystem.model.Employee;
 import com.employee.management.employeemanagementsystem.model.Level;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;

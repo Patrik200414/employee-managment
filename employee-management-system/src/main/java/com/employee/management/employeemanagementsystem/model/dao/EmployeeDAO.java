@@ -1,4 +1,4 @@
-package com.employee.management.employeemanagementsystem.dao;
+package com.employee.management.employeemanagementsystem.model.dao;
 
 import com.employee.management.employeemanagementsystem.model.Employee;
 
