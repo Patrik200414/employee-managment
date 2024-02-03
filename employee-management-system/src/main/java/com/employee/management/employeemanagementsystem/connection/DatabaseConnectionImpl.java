@@ -7,7 +7,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Optional;
 
-@Repository
 public class DatabaseConnectionImpl implements DatabaseConnection{
     private final String connectionUrl;
 
