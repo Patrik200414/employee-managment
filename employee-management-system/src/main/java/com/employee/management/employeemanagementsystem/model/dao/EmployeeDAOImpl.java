@@ -6,6 +6,7 @@ import com.employee.management.employeemanagementsystem.logger.ConsoleLogger;
 import com.employee.management.employeemanagementsystem.logger.Logger;
 import com.employee.management.employeemanagementsystem.model.Employee;
 import com.employee.management.employeemanagementsystem.model.Level;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -21,10 +22,11 @@ import java.util.Optional;
 public class EmployeeDAOImpl implements EmployeeDAO{
     private final DatabaseConnection databaseConnection;
     private final Logger logger;
-    //@Autowired
+
+    @Autowired
     public EmployeeDAOImpl(Logger logger) {
         this.databaseConnection = new DatabaseConnectionImpl();
-        this.logger = new ConsoleLogger();
+        this.logger = logger;
     }
 
     @Override
