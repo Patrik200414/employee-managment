@@ -1,6 +1,5 @@
-package com.employee.management.employeemanagementsystem.dao;
+package com.employee.management.employeemanagementsystem.model.dao;
 
-import com.employee.management.employeemanagementsystem.configuration.LoggerConfiguration;
 import com.employee.management.employeemanagementsystem.connection.DatabaseConnection;
 import com.employee.management.employeemanagementsystem.connection.DatabaseConnectionImpl;
 import com.employee.management.employeemanagementsystem.logger.ConsoleLogger;
@@ -23,15 +22,16 @@ import java.util.Optional;
 public class EmployeeDAOImpl implements EmployeeDAO{
     private final DatabaseConnection databaseConnection;
     private final Logger logger;
-    //@Autowired
+
+    @Autowired
     public EmployeeDAOImpl(Logger logger) {
         this.databaseConnection = new DatabaseConnectionImpl();
-        this.logger = new ConsoleLogger();
+        this.logger = logger;
     }
 
     @Override
     public List<Employee> getEmployees() {
-        String sql = "SELECT * FROM employee_management ORDER BY hired DESC;";
+        String sql = "SELECT * FROM employees ORDER BY hired DESC;";
         List<Employee> employees = new ArrayList<>();
         try{
             Optional<Connection> optionalConnection = databaseConnection.connect();
@@ -51,7 +51,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
                 Employee employee = new Employee(id, name, level, hired);
                 employees.add(employee);
             }
-
+            connection.close();
         } catch (SQLException e){
             logger.logError(e.getMessage());
         }
