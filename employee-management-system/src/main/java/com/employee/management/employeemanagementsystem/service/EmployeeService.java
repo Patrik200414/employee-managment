@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -19,14 +20,11 @@ public class EmployeeService {
         this.employeeDAO = employeeDAO;
     }
 
-    public List<EmployeeDTO> getEmployees(){
-        return employeeDAO.getEmployees().stream()
-                .map(employee -> {
-                    String name = employee.getName();
-                    Level level = employee.getLevel();
-                    LocalDate hired = employee.getHired();
+    public List<Employee> getEmployees(){
+        return employeeDAO.getEmployees();
+    }
 
-                    return new EmployeeDTO(name, level, hired);
-                }).toList();
+    public Optional<Employee> getEmployeeById(int id){
+        return employeeDAO.getEmployeeById(id);
     }
 }
