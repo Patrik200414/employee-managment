@@ -1,6 +1,8 @@
 package com.employee.management.employeemanagementsystem.controller;
 
 import com.employee.management.employeemanagementsystem.custom_exception.ExceptionHandler;
+import com.employee.management.employeemanagementsystem.custom_exception.InvalidEmployeeIdException;
+import com.employee.management.employeemanagementsystem.model.Employee;
 import com.employee.management.employeemanagementsystem.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +30,8 @@ public class EmployeeController {
     @GetMapping("/api/employees/{id}")
     public ResponseEntity<?> getEmployeeById(@PathVariable int id){
         try{
-            return ResponseEntity.ok("");
+            Employee searchedEmployee = employeeService.getEmployeeById(id).orElseThrow(() -> new InvalidEmployeeIdException(id));
+            return ResponseEntity.ok(searchedEmployee);
         } catch (Exception e){
             return exceptionHandler.exceptionHandler(e);
         }
