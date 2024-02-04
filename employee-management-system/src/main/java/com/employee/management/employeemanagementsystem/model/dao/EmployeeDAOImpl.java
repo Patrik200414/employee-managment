@@ -51,7 +51,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
                 Employee employee = new Employee(id, name, level, hired);
                 employees.add(employee);
             }
-
+            connection.close();
         } catch (SQLException e){
             logger.logError(e.getMessage());
         }
